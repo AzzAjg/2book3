@@ -20,7 +20,7 @@ export class BorrowsService {
         data: {
           started_at: createBorrowDto.started_at,
           end_at: formattedEndAt,
-          status: createBorrowDto.status['ONGOING'],
+          status: createBorrowDto.status,
           employee: {
             connect: {
               UUID: uuid,
