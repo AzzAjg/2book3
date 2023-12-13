@@ -1,6 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
 import { IsDate, IsInt, Length, IsUUID } from 'class-validator';
-import { borrowState }  from "@prisma/client";
+import { borrowState } from "@prisma/client";
 
 export class CreateBorrowDto {
 

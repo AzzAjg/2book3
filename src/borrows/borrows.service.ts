@@ -4,6 +4,7 @@ import { CreateBorrowDto } from './dto/create-borrow.dto';
 import { UpdateBorrowDto } from './dto/update-borrow.dto';
 import NormalizedResponse from '../utils/normalized.response';
 import { addDays, format } from 'date-fns';
+import { borrowState } from '@prisma/client';
 
 @Injectable()
 export class BorrowsService {
@@ -19,7 +20,7 @@ export class BorrowsService {
         data: {
           started_at: createBorrowDto.started_at,
           end_at: formattedEndAt,
-          status: createBorrowDto.status,
+          status: createBorrowDto.status['ONGOING'],
           employee: {
             connect: {
               UUID: createBorrowDto.employee_uuid,
